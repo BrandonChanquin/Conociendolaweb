@@ -1,0 +1,475 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+/*Estilos de Header*/
+
+.header{
+	width: 100%;
+	height: 550px;
+	background: #2c3e50;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #3498db, #2c3e50);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #3498db, #2c3e50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	position: relative;
+	/*flex*/
+	display: flex;
+	flex-flow: column nowrap;
+	z-index: 1;
+
+}
+
+/*Estilos del titulo_concepto*/
+
+.titulo_concepto{
+	width: 90%;
+	max-width: 900px;
+	margin: auto;
+	text-align: center;
+
+}
+
+.titulo_concepto h1{
+	color: #fff;
+	font-size: 45px;
+	margin: 15px;
+	font-family: 'Cabin', sans-serif;
+	text-transform: uppercase;
+}
+
+.titulo_concepto span{
+	color: skyblue;
+	font-size: 50px;
+}
+
+.wave{
+	width: 100%;
+	position: absolute;
+	bottom: 0px;
+	z-index: -1;
+
+	
+}
+
+		/*estilos del input y label para el menu-responsive*/
+.menu input{
+	display: none;
+}
+
+.menu label{
+	display: none;
+}
+
+/*Estilos del contenido*/
+
+.contenido{
+	width: 100%;
+	margin: auto;
+	display: flex;
+	flex-flow: column nowrap;
+}
+
+.title_page{
+	width: 80%;
+	max-width: 90%;
+	margin: auto;
+	padding: 70px 0px 0px 0px;
+	text-align: center;
+	font-size: 30px;
+	font-family: 'Cabin', sans-serif;
+}
+
+
+.articulos{
+	width: 80%;
+	max-width: 1000px;
+	margin: auto;
+	padding: 100px 0px 100px 0px;
+	/*flex*/
+	flex:2 1 auto;
+	display: flex;
+	flex-flow: row wrap;
+}
+
+.articulo{
+	height: auto;
+	margin: 10px 10px 0 0;
+	padding: 30px 15px;
+	flex: 1 1 45%;
+	background-color: #d0e8f2;
+	border-radius: 30px;
+}
+
+.articulo img{
+	width: 90%;
+	height: 250px;
+	object-fit: cover;
+	border-radius: 30px;
+	margin:auto;
+	display: block;
+}
+
+.articulo h3{
+	font-family: 'Cabin', sans-serif;
+	font-size: 30px;
+	color: #000;
+	padding: 10px 0;
+}
+
+.articulo p{
+	font-family: 'Arimo', sans-serif;
+	color: #444444;
+	font-size: 20px;
+	padding-bottom: 20px;
+}
+
+.leer{
+	text-decoration: none;
+	font-family: 'Arimo', sans-serif;
+	color: #fff;
+	background-color:  #03506f;
+	font-size: 18px;
+	padding: 15px;
+	border-radius: 50px;
+}
+
+.leer:hover{
+	background-color: #1687a7;
+}
+
+
+
+@media screen and (max-width: 900px){
+	
+
+	.logo{
+		text-align: center;
+	}
+
+	.logo a{
+		margin-left: 0px;
+	}
+
+	.menu label{
+		color: #fff;
+		font-size: 18px;
+		display: block;
+		order: 3;
+		padding: 16px 20px 16px 10px;
+}
+
+	/*media queries de los Pseudoelementos del menú*/
+	.navegador a::after{
+	content: none;
+
+	}
+
+	.menu a.selected::after,
+	.menu a:hover::after{
+	background-color: rgba(255,255,255,.2);
+	}
+
+	.navegador{
+		background-color: #2c3e50;/* #0f4c75 rgba(0,0,0,1);*/
+		width: 100%;
+		height: 100vh;
+		position: absolute;
+		top: 50px;
+		left: 0px;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+	
+		transform: translateX(-100%);
+		transition: all 0.3s;
+}
+
+	.navegador a{
+		color: #fff;
+		font-size: 18px;
+		padding: 5px 0 5px 0;
+		margin: 30px 0px 30px 0px; 
+		text-align: center;
+		flex: none;
+	}
+
+	.navegador a:hover{
+		color: skyblue;
+}
+
+	#responsive:checked ~ .navegador{
+	transform: translateX(0%);
+}
+
+	.socialdos{
+		margin-bottom: 20px;
+	}
+
+}
+
+@media screen and (max-width: 800px){
+	.articulo img{
+		height: 250px;
+	}
+
+}
+
+
+@media screen and (max-width: 750px) {
+
+	.titulo_concepto h1{
+		font-size: 35px;
+	}
+
+	.titulo_concepto span{
+		font-size: 40px;
+	}
+
+	.title_page h2{
+		font-size: 30px;
+	}
+
+	.articulo p{
+		font-size: 19px;
+	}
+	.articulo img{
+		height: 220px;
+	}
+
+	.articulo p{
+		font-size: 18px;
+	}
+
+	.header{
+	height: 500px;
+	}
+
+}
+
+
+@media screen and (max-width: 600px){
+
+	.logo a{
+		font-size: 23px;
+	}
+
+	.menu-responsive label{
+		font-size: 16px;
+	}
+
+	.pie{
+		flex-direction: column;
+	}
+
+	.pie h3{
+		margin-top: 10px;
+		font-size: 18px;
+		text-align: center;
+	}
+
+	.titulo_concepto h1{
+		font-size: 30px;
+	}
+
+	.titulo_concepto span{
+		font-size: 35px;
+	}
+
+	.articulo p{
+		font-size: 18px;
+	}
+
+	.articulo img{
+		height: 200px;
+	}
+
+	.articulos{
+		flex-flow: column nowrap;
+	}
+
+
+
+}
+
+@media screen and (max-width: 500px) {
+
+	.logo a{
+		font-size: 22px;
+		letter-spacing: 1px;
+	}
+
+	.social i{
+		font-size: 16px;
+		padding: 15px 10px;	
+	}
+
+	.menu label{
+		font-size: 16px;
+	}
+
+	.articulo h3{
+		font-size: 27px;
+	}
+
+	.navegador a{
+		font-size: 18px;
+	}
+
+}
+
+
+@media screen and (max-width: 450px) {
+	
+	.logo a{
+		font-size: 21px;
+	}
+
+	.nosotros p{
+		font-size: 15px;
+	}
+
+/*	.articulo p{
+		font-size: 18px;
+	}*/
+	
+	.articulo img{
+		height: 180px;
+	}
+	
+}
+
+@media screen and (max-width: 400px){
+
+	.logo a{
+		font-size: 20.5px;
+		/*letter-spacing: 4px;*/
+	}
+
+	.social i{
+		font-size: 15px;
+	}
+
+	.menu label{
+		padding-right: 17px;
+	}
+
+	.titulo_concepto h1{
+		font-size: 30px;
+	}
+
+	.titulo_concepto span{
+		font-size: 35px;
+	}
+
+	.title_page h2{
+		font-size: 30px;
+	}
+
+	.leer{
+		font-size: 16px;
+	}
+
+	.articulo h3{
+		font-size: 25px;
+	}
+
+/*	.articulo p{
+		font-size: 16px;
+	}*/
+
+	.header{
+		height: 470px;
+	}
+
+
+}
+
+
+@media screen and (max-width: 380px) {
+	
+	.logo{
+		text-align: center;
+	}
+
+	.logo a{
+		font-size: 20px;
+	}
+
+	.social i{
+		font-size: 15px;
+		padding: 16px 8px;
+	}
+
+	.menu label{
+		font-size: 16px;
+		padding: 16px 15px 16px 10px;
+	}
+
+	.navegador a{
+		font-size: 16px;
+	}
+
+	.pie h3{
+		font-size: 15px;
+	}
+	
+}
+
+@media screen and (max-width: 317px){
+
+	.logo a{
+		font-size: 19px;
+		letter-spacing: 3px;
+	}
+
+	.social i{
+		padding: 16px 6px;
+	}
+
+	.articulo img{
+		height: 140px;
+	}
+
+	.titulo_concepto h1{
+		font-size: 25px;
+	}
+
+	.titulo_concepto span{
+		font-size: 28px;
+	}
+
+	.title_page h2{
+		font-size: 28px;
+	}
+
+	.leer{
+		font-size: 15px;
+	}
+
+	.articulo h3{
+		font-size: 23px;
+	}
+
+/*	.articulo p{
+		font-size: 15px;
+	}*/
+	
+}
+
+@media screen and (max-width: 290px) {
+
+	.logo a{
+		font-size: 17px;
+	}
+
+	.social i{
+		font-size: 14px;
+		padding: 16px 5px;
+	}
+
+	.menu label{
+		font-size: 14px;
+	}
+}
+

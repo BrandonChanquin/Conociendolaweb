@@ -1,0 +1,492 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+/*Estilos de Header*/
+
+.header{
+	width: 100%;
+	height: 550px;
+	background: #2c3e50;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #3498db, #2c3e50);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #3498db, #2c3e50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	position: relative;
+	/*flex*/
+	display: flex;
+	flex-flow: column nowrap;
+	z-index: 1;
+
+}
+
+/*Estilos del titulo_concepto*/
+
+.titulo_concepto{
+	width: 90%;
+	max-width: 900px;
+	margin: auto;
+	text-align: center;
+
+}
+
+.titulo_concepto h1{
+	color: #fff;
+	font-size: 45px;
+	margin: 15px;
+	font-family: 'Cabin', sans-serif;
+	text-transform: uppercase;
+}
+
+.titulo_concepto span{
+	color: skyblue;
+	font-size: 50px;
+}
+
+.wave{
+	width: 100%;
+	position: absolute;
+	bottom: 0px;
+	z-index: -1;
+
+}
+
+/*Estilos del contenido Principal*/
+
+.main{
+	width: 100%;
+	margin: auto;
+}
+
+.conceptos_html{
+	width: 70%;
+	max-width: 1000px;
+	margin: auto;
+	display: flex;
+	flex-flow: column nowrap;
+	background-color: #d0e8f2;
+	padding: 50px 80px;
+	margin-bottom: 100px;
+	margin-top: 100px;
+	border-radius: 30px;
+	box-shadow: 10px 10px 5px #cccccc;
+}
+
+.definicion{
+	text-align: center;
+	
+}
+
+.definicion h2{
+	font-family: 'Cabin', sans-serif;
+	font-size: 30px;
+	color: #000;
+	padding: 10px 0;
+	text-align: center;
+}
+
+.definicion p{
+	font-family: 'Arimo', sans-serif;
+	color: #444444;
+	font-size: 20px;
+	text-align: left;
+}
+
+.definicion img{
+	width: 50%;
+	margin: 15px;
+	border-radius: 30px;
+}
+
+.definicion_left{
+	padding: 0px 20px;
+	font-family: 'Arimo', sans-serif;
+	color: #444444;
+	font-size: 20px;
+	text-align: left;
+}
+
+.img_complement{
+	margin-top: 50px;
+	display: flex;
+	flex-flow: row nowrap;
+}
+
+.imagenes{
+	margin: 0px 10px;
+	width: 40%;
+	border-radius: 15px;
+	flex: 1 1 auto;
+}
+
+.boton{
+	text-align: center;
+	margin-top: 50px;
+}
+
+.boton a{
+	text-decoration: none;
+	width: 100px;
+	font-family: 'Arimo', sans-serif;
+	color: #fff;
+	background-color:  #03506f;
+	font-size: 20px;
+	padding: 15px;
+	border-radius: 50px;
+	margin: center;
+}
+
+.boton a:hover{
+	background-color: #1687a7;
+}
+
+
+
+
+		/*estilos del input y label para el menu-responsive*/
+
+	.menu input{
+	display: none;
+}
+
+	.menu label{
+	display: none;
+}
+
+
+/*mediaqueries del menú y header*/
+
+@media screen and (max-width: 900px){
+	
+	/*media queries de los Pseudoelementos del menú*/
+	.navegador a::after{
+	content: none;
+
+	}
+
+	.menu a.selected::after,
+	.menu a:hover::after{
+	background-color: rgba(255,255,255,.2);
+	}
+
+
+	.logo{
+		text-align: center;
+	}
+
+	.logo a{
+		margin-left: 0px;
+	}
+
+	.menu label{
+		color: #fff;
+		font-size: 18px;
+		display: block;
+		order: 3;
+		padding: 16px 20px 16px 10px;
+	}
+
+	.navegador{
+		background-color: #2c3e50;/* #0f4c75 rgba(0,0,0,1);*/
+		width: 100%;
+		height: 100vh;
+		position: absolute;
+		top: 50px;
+		left: 0px;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+	
+		transform: translateX(-100%);
+		transition: all 0.3s;
+}
+
+	.navegador a{
+		color: #fff;
+		font-size: 18px;
+		padding: 5px 0 5px 0;
+		margin: 30px 0px 30px 0px; 
+		text-align: center;
+		flex: none;
+	}
+
+	.navegador a:hover{
+		color: skyblue;
+}
+
+	#responsive:checked ~ .navegador{
+	transform: translateX(0%);
+}
+
+
+
+	.definicion img{
+		width: 80%;
+	}
+
+	.img_complement{
+		flex-flow: column nowrap;
+	}
+
+	.imagenes{
+		width: 90%;
+		margin: 20px;
+	}
+
+	.socialdos{
+		margin-bottom: 20px;
+	}
+
+}
+
+@media screen and (max-width: 750px) {
+
+	.titulo_concepto h1{
+		font-size: 35px;
+	}
+
+	.titulo_concepto span{
+		font-size: 40px;
+	}
+
+	.pie{
+		flex-direction: column;
+	}
+
+	.header{
+	height: 500px;
+	}
+
+	.conceptos_html,.contenido{
+		padding: 50px 60px;
+	}
+
+}
+
+
+@media screen and (max-width: 600px){
+
+	.logo a{
+		font-size: 23px;
+	}
+
+	.menu-responsive label{
+		font-size: 16px;
+	}
+
+	.pie{
+		flex-direction: column;
+	}
+
+	.pie h3{
+		margin-top: 10px;
+		font-size: 18px;
+		text-align: center;
+	}
+
+	.titulo_concepto h1{
+		font-size: 30px;
+	}
+
+	.titulo_concepto span{
+		font-size: 35px;
+	}
+
+	/**/
+
+	.conceptos_html,.contenido{
+		width: 80%;
+		padding: 50px 50px;
+	}
+
+	.definicion p, .definicion_left, .sobre_mi p{
+		font-size: 18px;
+	}
+
+	.definicion h2, .sobre_mi h2{
+		font-size: 28px;
+	}
+
+	.boton a{
+		font-size: 18px;
+	}
+
+	.sobre_mi img{
+	width: 120px;
+	height: 120px;
+
+	}
+	
+
+}
+
+@media screen and (max-width: 500px) {
+
+	.logo a{
+		font-size: 22px;
+		letter-spacing: 1px;
+	}
+
+	.socialdos i, .redes_sociales i{
+		font-size: 16px;
+		padding: 15px 15px;	
+	}
+
+	.menu label{
+		font-size: 16px;
+	}
+
+	.navegador a{
+		font-size: 18px;
+	}
+
+	/**/
+
+	.conceptos_html,.contenido{
+		padding: 50px 40px;
+	}
+
+	
+	.definicion h2, .sobre_mi h2{
+		font-size: 24px;
+	}
+
+	.boton a{
+		font-size: 16px;
+	}
+
+
+}
+
+
+@media screen and (max-width: 450px) {
+	
+	.logo a{
+		font-size: 21px;
+	}
+
+	.nosotros p{
+		font-size: 15px;
+	}
+
+
+	/**/
+
+	.sobre_mi img{
+	width: 100px;
+	height: 100px;
+
+	}
+	
+}
+
+@media screen and (max-width: 400px){
+
+	.logo a{
+		font-size: 20.5px;
+		/*letter-spacing: 4px;*/
+	}
+
+	.menu label{
+		padding-right: 17px;
+	}
+
+	.titulo_concepto h1{
+		font-size: 30px;
+	}
+
+	.titulo_concepto span{
+		font-size: 35px;
+	}
+
+	.header{
+		height: 470px;
+	}
+
+	.conceptos_html,.contenido{
+		padding: 50px 30px;
+	}
+
+	.definicion h2, .sobre_mi h2{
+		font-size: 22px;
+	}
+
+	.img_complement{
+		margin-top: 30px;
+	}
+
+}
+
+
+@media screen and (max-width: 380px) {
+	
+	.logo{
+		text-align: center;
+	}
+
+	.logo a{
+		font-size: 20px;
+		letter-spacing: 1px;
+	}
+
+	.menu label{
+		font-size: 16px;
+		padding: 16px 15px 16px 10px;
+	}
+
+	.navegador a{
+		font-size: 16px;
+	}
+
+	.pie h3{
+		font-size: 15px;
+	}
+	
+}
+
+@media screen and (max-width: 317px){
+
+	.logo a{
+		font-size: 19px;
+		letter-spacing: 1px;
+	}
+
+	.social i{
+		padding: 16px 6px;
+	}
+
+	.articulo img{
+		height: 140px;
+	}
+
+	.titulo_concepto h1{
+		font-size: 25px;
+	}
+
+	.titulo_concepto span{
+		font-size: 28px;
+	}
+
+	.definicion h2, .sobre_mi h2{
+		font-size: 20px;
+	}
+
+	.definicion p, .definicion_left, .sobre_mi p{
+		font-size: 15px;
+	}
+
+	
+	
+}
+
+@media screen and (max-width: 290px) {
+
+	.logo a{
+		font-size: 17px;
+	}
+
+
+	.menu label{
+		font-size: 14px;
+	}
+}
